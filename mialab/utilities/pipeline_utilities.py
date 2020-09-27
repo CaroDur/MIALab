@@ -37,7 +37,7 @@ def load_atlas_images(directory: str):
 
 
 class FeatureImageTypes(enum.Enum):
-    """Represents the feature image types."""
+    """Represents the feature image types."""soda
 
     ATLAS_COORD = 1
     T1w_INTENSITY = 2
@@ -289,7 +289,7 @@ def init_evaluator() -> eval_.Evaluator:
     """
 
     # initialize metrics
-    metrics = [metric.DiceCoefficient()]
+    metrics = [metric.DiceCoefficient(), metric.HausdorffDistance(95)]
     # todo: add hausdorff distance, 95th percentile (see metric.HausdorffDistance)
     warnings.warn('Initialized evaluation with the Dice coefficient. Do you know other suitable metrics?')
 
